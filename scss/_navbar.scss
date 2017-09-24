@@ -1,100 +1,83 @@
 // Styling for the navbar
 #mainNav {
-  position: absolute;
-  border-bottom: 1px solid $gray-lighter;
-  background-color: white;
-  @include sans-serif-font;
-  .navbar-brand {
-    font-weight: 800;
-    color: $gray-light;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  background: $theme-primary;
+  a:focus {
+    outline: none;
   }
-  .navbar-toggler {
-    font-size: 12px;
-    font-weight: 800;
-    padding: 13px;
-    text-transform: uppercase;
-    color: $gray-light;
+  .navbar-brand {
+    font-size: 1.1rem;
+    color: white;
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      color: white;
+    }
   }
   .navbar-nav {
-    > li.nav-item {
-      > a {
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 1px;
-        text-transform: uppercase;
+    letter-spacing: 1px;
+    li.nav-item {
+      a.nav-link {
+        color: white;
+        &:hover {
+          color: $theme-success;
+          outline: none;
+        }
+        &:active,
+        &:focus {
+          color: white;
+        }
       }
     }
   }
-  @media only screen and (min-width: 992px) {
-    border-bottom: 1px solid transparent;
-    background: transparent;
-    .navbar-brand {
-      padding: 15px 20px;
+  .navbar-toggler {
+    font-size: 14px;
+    padding: 11px;
+    text-transform: uppercase;
+    color: white;
+    border-color: white;
+    &:focus,
+    &:hover {
       color: white;
+      border-color: $theme-success;
+      background-color: $theme-success;
+    }
+  }
+}
+@media(min-width:992px) {
+  #mainNav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    .navbar-brand {
+      font-size: 2em;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    .navbar-nav > li.nav-item > a.nav-link.active {
+      color: white;
+      border-radius: 3px;
+      background: $theme-success;
+      &:active,
       &:focus,
       &:hover {
-        color: fade-out(white, .2);
-      }
-    }
-    .navbar-nav {
-      > li.nav-item {
-        > a {
-          padding: 15px 20px;
-          color: white;
-          &:focus,
-          &:hover {
-            color: fade-out(white, .2);
-          }
-        }
+        color: white;
+        background: $theme-success;
       }
     }
   }
-  @media only screen and (min-width: 1170px) {
-    -webkit-transition: background-color 0.2s;
-    -moz-transition: background-color 0.2s;
-    transition: background-color 0.2s;
-    /* Force Hardware Acceleration in WebKit */
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    &.is-fixed {
-      /* when the user scrolls down, we hide the header right above the viewport */
-      position: fixed;
-      top: -77px;
-      -webkit-transition: -webkit-transform 0.2s;
-      -moz-transition: -moz-transform 0.2s;
-      transition: transform 0.2s;
-      border-bottom: 1px solid darken(white, .05);
-      background-color: fade-out(white, .1);
-      .navbar-brand {
-        color: $gray-dark;
-        &:focus,
-        &:hover {
-          color: $theme-primary;
-        }
-      }
-      .navbar-nav {
-        > li.nav-item {
-          > a {
-            color: $gray-dark;
-            &:focus,
-            &:hover {
-              color: $theme-primary;
-            }
-          }
-        }
-      }
-    }
-    &.is-visible {
-      /* if the user changes the scrolling direction, we show the header */
-      -webkit-transform: translate3d(0, 100%, 0);
-      -moz-transform: translate3d(0, 100%, 0);
-      -ms-transform: translate3d(0, 100%, 0);
-      -o-transform: translate3d(0, 100%, 0);
-      transform: translate3d(0, 100%, 0);
+  #mainNav.navbar-shrink {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .navbar-brand {
+      font-size: 1.5em;
     }
   }
 }

@@ -1,16 +1,23 @@
 // Global styling for this template
 body {
-  font-size: 20px;
-  color: $gray-dark;
-  @include serif-font;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 p {
-  line-height: 1.5;
-  margin: 30px 0;
-  a {
-    text-decoration: underline;
-  }
+  font-size: 20px;
+}
+
+p.small {
+  font-size: 16px;
+}
+a,
+a.active,
+a:active,
+a:focus,
+a:hover {
+  color: $theme-success;
+  outline: none;
 }
 
 h1,
@@ -19,70 +26,88 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 800;
-  @include sans-serif-font;
-}
-
-a {
-  color: $gray-dark;
-  @include transition-all;
-  &:focus,
-  &:hover {
-    color: $theme-primary;
-  }
-}
-
-a img {
-  &:focus,
-  &:hover {
-    cursor: zoom-in;
-  }
-}
-
-blockquote {
-  font-style: italic;
-  color: $gray-light;
-}
-
-.section-heading {
-  font-size: 36px;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
-  margin-top: 60px;
+  text-transform: uppercase;
 }
 
-.caption {
-  font-size: 14px;
-  font-style: italic;
-  display: block;
-  margin: 0;
-  padding: 10px;
+hr.star-light,
+hr.star-primary {
+  max-width: 250px;
+  margin: 25px auto 30px;
+  padding: 0;
   text-align: center;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border: none;
+  border-top: solid 5px;
+}
+hr.star-light:after,
+hr.star-primary:after {
+  font-family: FontAwesome;
+  font-size: 2em;
+  position: relative;
+  top: -.8em;
+  display: inline-block;
+  padding: 0 0.25em;
+  content: '\f005';
 }
 
-::-moz-selection {
+hr.star-light {
+  border-color: white;
+}
+hr.star-light:after {
   color: white;
-  background: $theme-primary;
-  text-shadow: none;
+  background-color: $theme-success;
 }
 
-::selection {
+hr.star-primary {
+  border-color: $theme-primary;
+}
+hr.star-primary:after {
+  color: $theme-primary;
+  background-color: white;
+}
+
+.img-centered {
+  margin: 0 auto;
+}
+
+section {
+  padding: 100px 0;
+  h2 {
+    font-size: 3em;
+    margin: 0;
+  }
+}
+
+section.success {
   color: white;
-  background: $theme-primary;
-  text-shadow: none;
+  background: $theme-success;
+}
+@media(max-width:767px) {
+  section {
+    padding: 75px 0;
+  }
+  section.first {
+    padding-top: 75px;
+  }
 }
 
-img::selection {
-  color: white;
-  background: transparent;
-}
-
-img::-moz-selection {
-  color: white;
-  background: transparent;
-}
-
-body {
-  -webkit-tap-highlight-color: $theme-primary;
+.scroll-top {
+  position: fixed;
+  z-index: 1049;
+  right: 2%;
+  bottom: 2%;
+  width: 50px;
+  height: 50px;
+  .btn {
+    font-size: 16px;
+    line-height: 28px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
 }
