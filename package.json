@@ -1,45 +1,26 @@
 {
-  "title": "Freelancer",
-  "name": "startbootstrap-freelancer",
-  "version": "4.0.0-beta",
-  "description": "A freelancer portfolio HTML theme for Bootstrap.",
-  "keywords": [
-    "css",
-    "sass",
-    "html",
-    "responsive",
-    "theme",
-    "template"
-  ],
-  "homepage": "https://startbootstrap.com/template-overviews/freelancer",
-  "bugs": {
-    "url": "https://github.com/BlackrockDigital/startbootstrap-freelancer/issues",
-    "email": "feedback@startbootstrap.com"
-  },
-  "license": "MIT",
-  "author": "Start Bootstrap",
-  "contributors": [
-    "David Miller (http://davidmiller.io/)"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-freelancer.git"
-  },
+  "name": "my-react-project",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "bootstrap": "^4.0.0-beta",
-    "font-awesome": "4.7.0",
-    "jquery": "^3.2.1",
-    "jquery.easing": "^1.4.1",
-    "popper.js": "^1.11.1"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-pdf": "^3.0.5",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "browser-sync": "2.18.13",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "3.7.0",
-    "gulp-filter": "^5.0.1",
-    "gulp-header": "1.8.9",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "3.0.0"
+    "gulp-changed": "^3.2.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0"
   }
 }
